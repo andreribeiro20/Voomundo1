@@ -1,0 +1,286 @@
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VooMundo - Agência de Viagens</title>
+
+<style>
+    :root {
+        --primary: #0077b6;
+        --secondary: #90e0ef;
+        --yellow: #ffd166;
+    }
+
+    body {
+        margin: 0;
+        font-family: "Segoe UI", Arial, sans-serif;
+        color: #333;
+        scroll-behavior: smooth;
+        background-color: #f0f8ff; /* cor de fundo */
+    }
+
+    /* MENU */
+    header {
+        background: var(--primary);
+        color: white;
+        padding: 15px 35px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 3px 6px rgba(0,0,0,0.25);
+    }
+    header .logo { font-size: 1.8em; font-weight: bold; }
+    header ul { list-style: none; display: flex; gap: 18px; margin: 0; padding-right: 20px; }
+    header a { text-decoration: none; color: white; font-weight: bold; }
+    header a:hover { color: var(--yellow); }
+
+    /* HERO */
+    .hero { margin-top: 70px; position: relative; text-align: center; color: white; height: 600px; overflow: hidden; }
+    .hero video { width: 100%; height: 100%; object-fit: cover; }
+    .hero-text { position: absolute; top: 45%; left: 50%; transform: translate(-50%, -50%); }
+    .hero-text h1 { font-size: 3.5em; margin: 0; text-shadow: 2px 2px 5px black; }
+    .hero-text p { font-size: 1.3em; margin-bottom: 20px; text-shadow: 2px 2px 4px black; }
+    .btn { background: var(--yellow); padding: 14px 28px; text-decoration: none; color: black; border-radius: 8px; font-weight: bold; transition: 0.3s; }
+    .btn:hover { background: #e0b000; color: white; }
+
+    /* SEÇÕES */
+    .section { padding: 90px 30px; text-align: center; }
+    .gray { background: #f1f1f1; }
+
+    /* DESTINOS */
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 30px; margin-top: 40px; }
+    .card { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.2); transition: 0.3s; }
+    .card:hover { transform: scale(1.03); }
+    .card img { width: 100%; height: 190px; object-fit: cover; }
+    .card h3 { margin: 10px; }
+
+    /* PACOTES */
+    .pacote { width: 70%; margin: 25px auto; padding: 25px; background: white; border-radius: 12px; border-left: 6px solid var(--primary); box-shadow: 0 2px 8px rgba(0,0,0,0.2); text-align: left; }
+    .preco { color: var(--primary); font-size: 22px; font-weight: bold; }
+
+    /* FORMULÁRIOS */
+    form { max-width: 420px; margin: auto; display: flex; flex-direction: column; gap: 15px; }
+    form input, form textarea, form select { padding: 14px; border-radius: 8px; border: 1px solid #ccc; font-size: 1em; }
+    form button { background: var(--primary); color: white; padding: 14px; border-radius: 8px; border: none; font-size: 1.1em; font-weight: bold; cursor: pointer; }
+    form button:hover { background: var(--yellow); color: black; }
+
+    /* FOOTER */
+    footer { background: var(--primary); color: white; padding: 25px; text-align: center; margin-top: 50px; }
+
+    
+
+    /* BOTÃO EXPORTAR */
+    .export-btn { margin: 20px auto; display: block; padding: 10px 20px; background: var(--yellow); border: none; border-radius: 8px; font-weight: bold; cursor: pointer; }
+    .export-btn:hover { background: #e0b000; color: white; }
+</style>
+</head>
+
+<body>
+
+<!-- MENU -->
+<header>
+    <div class="logo">VooMundo</div>
+    <nav>
+        <ul>
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#destinos">Destinos</a></li>
+            <li><a href="#pacotes">Pacotes</a></li>
+            <li><a href="#sobre">Sobre Nós</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+            <li><a href="#reserva">Reservas</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- HERO COM VÍDEO VISÍVEL -->
+<section id="inicio" class="hero">
+    <video autoplay muted loop>
+        <source src="mar.mp4" type="video/mp4">
+        O seu navegador não suporta vídeo.
+    </video>
+    <div class="hero-text">
+        <h1>Explora o Mundo</h1>
+        <p>Descobre destinos incríveis ao melhor preço.</p>
+        <a href="#pacotes" class="btn">Ver Pacotes</a>
+    </div>
+</section>
+
+<!-- DESTINOS -->
+<section id="destinos" class="section">
+    <h2>Destinos Populares</h2>
+    <div class="grid">
+        <div class="card">
+            <a href="#pacotes"><img src="paris.jpg" alt="Paris"></a>
+            <h3>Paris</h3>
+            <p>Paris espera por si: romance, arte e experiências únicas.</p>
+        </div>
+        <div class="card">
+            <a href="#pacotes"><img src="riojanneiro.jpg" alt="Rio de Janeiro"></a>
+            <h3>Rio de Janeiro</h3>
+            <p>Sinta a emoção do Rio: sol, praia e diversão sem fim.</p>
+        </div>
+        <div class="card">
+            <a href="#pacotes"><img src="santorini.jpg" alt="Santorini"></a>
+            <h3>Santorini</h3>
+            <p>Praias deslumbrantes e vilas brancas de sonho.</p>
+        </div>
+    </div>
+</section>
+
+<!-- PACOTES -->
+<section id="pacotes" class="section gray">
+    <h2>Pacotes Especiais</h2>
+
+    <article class="pacote">
+        <h3>Europa 7 dias</h3>
+        <p>Visita Paris, Roma e Madrid com conforto garantido.</p>
+        <span class="preco">1200€</span>
+    </article>
+    <article class="pacote">
+        <h3>Caribe All Inclusive</h3>
+        <p>Resort 5★ com tudo incluído.</p>
+        <span class="preco">1500€</span>
+    </article>
+    <article class="pacote">
+        <h3>Japão Cultural</h3>
+        <p>Tradição, modernidade e aventuras únicas.</p>
+        <span class="preco">2000€</span>
+    </article>
+    <article class="pacote">
+        <h3>Nova Iorque</h3>
+        <p>Arranha-céus, cultura vibrante e experiências inesquecíveis.</p>
+        <span class="preco">2100€</span>
+    </article>
+    <article class="pacote">
+        <h3>Santorini</h3>
+        <p>Praias deslumbrantes e vilas brancas de sonho.</p>
+        <span class="preco">1500€</span>
+    </article>
+    <article class="pacote">
+        <h3>Rio Janeiro</h3>
+        <p>Sinta a emoção do Rio: sol, praia e diversão sem fim.</p>
+        <span class="preco">1320€</span>
+    </article>
+    <article class="pacote">
+        <h3>Paris</h3>
+        <p>Paris espera por si: romance, arte e experiências únicas.</p>
+        <span class="preco">1000€</span>
+    </article>
+</section>
+
+<!-- SOBRE -->
+<section id="sobre" class="section">
+    <h2>Sobre Nós</h2>
+    <p>O VooMundo dedica-se à criação de experiências de viagem únicas,
+       oferecendo pacotes personalizados e apoio total desde o planeamento
+       até ao regresso.
+    </p>
+
+    <!-- LISTA ORDENADA -->
+    <h3>Como funciona a nossa agência</h3>
+    <ol style="max-width:600px; margin:20px auto; text-align:left;">
+        <li>Escolha do destino ideal</li>
+        <li>Seleção do pacote de viagem</li>
+        <li>Confirmação e pagamento</li>
+        <li>Acompanhamento até ao regresso</li>
+    </ol>
+
+    <h3 style="text-align:center; margin-top:40px;">Onde Estamos</h3>
+       <p style="text-align:center; color:black; font-weight:bold;">Rua Teixeira de Pascoais, 4800-123, Guimarães, Portugal</p>
+<iframe 
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3104.0213748419993!2d-8.297790384656605!3d41.44678957926586!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd24f44e25c0d2d3%3A0x82c416ab5df2304c!2sRua%20do%20Est%C3%A1dio%2C%20Guimar%C3%A3es!5e0!3m2!1spt-PT!2spt!4v1698025062345!5m2!1spt-PT!2spt" 
+    width="600" height="450" style="border:0; display:block; margin:0 auto;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+    
+</iframe>
+  <!-- VÍDEO DA AGÊNCIA -->
+<h3 style="text-align:center;">Vídeo da Nossa Agência</h3>
+<video controls width="600" style="display:block; margin:0 auto;">
+    <source src="agencia.mp4" type="video/mp4">
+        O seu navegador não suporta vídeo.
+</video>
+<!-- ÁUDIO -->
+<h3 style="text-align:center;">Áudio Institucional</h3>
+<audio controls style="display:block; margin:0 auto;">
+    <source src="audio.mp3" type="audio/mp3">
+    O seu navegador não suporta áudio.
+</audio>
+
+<!-- CONTACTO -->
+<section id="contacto" class="section gray">
+    <h2>Contacto</h2>
+    <form id="contact-form">
+        <input type="text" placeholder="Nome" required>
+        <input type="email" placeholder="Email" required>
+        <textarea placeholder="Mensagem" required></textarea>
+        <button>Enviar</button>
+    </form>
+</section>
+
+<!-- RESERVAS -->
+<section id="reserva" class="section">
+    <h2>Reservas</h2>
+    <form id="reserva-form">
+        <input type="text" placeholder="Nome Completo" required>
+        <input type="email" placeholder="Email" required>
+        <select required>
+            <option disabled selected>Escolhe o Pacote</option>
+            <option>Europa 7 dias</option>
+            <option>Caribe All Inclusive</option>
+            <option>Japão Cultural</option>
+            <option>Nova Iorque</option>
+            <option>Santorini</option>
+            <option>Rio Janeiro</option>
+            <option>Paris</option>
+       </select>
+        <input type="date" required>
+        <button>Confirmar Reserva</button>
+    </form>
+    <button class="export-btn" onclick="exportToExcel()">Exportar Reservas para Excel</button>
+    <table id="reserva-table" style="display:none;">
+        <tr><th>Nome</th><th>Email</th><th>Pacote</th><th>Data</th></tr>
+    </table>
+</section>
+
+<footer>
+    © 2026 VooMundo | Todos os direitos reservados
+</footer>
+
+<!-- SCRIPTS -->
+<script>
+    // Impede o refresh da página e exporta automaticamente
+    document.getElementById("reserva-form").addEventListener("submit", function(e) {
+    e.preventDefault(); // impede reload
+    exportToExcel();
+    this.reset(); // limpa o formulário
+    });
+
+    function exportToExcel() {
+    const table = document.getElementById("reserva-table");
+    const form = document.getElementById("reserva-form");
+
+    const nome = form.querySelector('input[type="text"]').value;
+    const email = form.querySelector('input[type="email"]').value;
+    const pacote = form.querySelector('select').value;
+    const data = form.querySelector('input[type="date"]').value;
+
+    // Adiciona linha à tabela
+    const row = table.insertRow();
+    row.insertCell(0).innerText = nome;
+    row.insertCell(1).innerText = email;
+    row.insertCell(2).innerText = pacote;
+    row.insertCell(3).innerText = data;
+
+    // Exporta para Excel
+    const html = table.outerHTML;
+    window.open(
+    'data:application/vnd.ms-excel,' + encodeURIComponent(html)
+    );
+}
+</script>
+
+</body>
+</html>
